@@ -1,3 +1,4 @@
+
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
@@ -55,40 +56,13 @@ function refreshDeviceList(){
 
 
 function onDiscoverDevice(device){
-app.connectToBluefruit = function(callback) // Connect to Bluefruit device
-{
-    evothings.easyble.startScan // Start scanning
-    (
-        function(device)
-        {
-            if (device.name == BLEDevice.name) // If device name correspond to Bluefruit device name
-            {
-                evothings.easyble.stopScan(); // Stop the scan
-                BluefruitUART = device; // Store the Bluefruit device
-
-                console.log('Adafruit Bluefruit LE UART found !');
-
-                BluefruitUART.connect // Connect to Bluefruit device
-                (
-                    function(device)
-                    {
-                        console.log('Connected to BLE device ' + BluefruitUART.name);
-                        callback();
-                    },
-                    function(errorCode)
-                    {
-                        console.log('Failed to connect to BLE device: ' + errorCode);
-                    }
-                )
-            }
-        },
-        function(errorString)
-        {
-            console.log('Error while scanning: ' + errorString);
-        }
-    );
-};
-
+	//Make a list in html and show devises
+		//if(device.name == "HTC"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
+		var listItem = document.createElement('li'),
+		html = device.name+ "," + device.id;
+		listItem.innerHTML = html;
+		document.getElementById("bleDeviceList").appendChild(listItem);
+		//} //slut tuborgparentes til mulig if-sætning
 }
 
 
@@ -141,5 +115,3 @@ function onDisconnect(){
 function onError(reason)  {
 	alert("ERROR: " + reason); // real apps should use notification.alert
 }
-
-	
