@@ -61,7 +61,7 @@ app.connectToBluefruit = function(callback) // Connect to Bluefruit device
     (
         function(device)
         {
-            if (device.name == BLEDevice.name) // If device name correspond to Bluefruit device name
+            if (device.name == HTC.name) // If device name correspond to Bluefruit device name
             {
                 evothings.easyble.stopScan(); // Stop the scan
                 BluefruitUART = device; // Store the Bluefruit device
