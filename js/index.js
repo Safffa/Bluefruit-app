@@ -61,18 +61,18 @@ app.connectToBluefruit = function(callback) // Connect to Bluefruit device
     (
         function(device)
         {
-            if (device.name == BLEDevice.name) // If device name correspond to Bluefruit device name
+            if (device.name == HTC.name) // If device name correspond to Bluefruit device name
             {
                 evothings.easyble.stopScan(); // Stop the scan
-                BluefruitUART = device; // Store the Bluefruit device
+                HTC = device; // Store the Bluefruit device
 
                 console.log('Adafruit Bluefruit LE UART found !');
 
-                BluefruitUART.connect // Connect to Bluefruit device
+                HTC.connect // Connect to Bluefruit device
                 (
                     function(device)
                     {
-                        console.log('Connected to BLE device ' + BluefruitUART.name);
+                        console.log('Connected to BLE device ' + HTC.name);
                         callback();
                     },
                     function(errorCode)
