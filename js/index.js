@@ -57,7 +57,7 @@ function refreshDeviceList(){
 
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
-		if(device.name == "HTC"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
+		if(device.name == "Find nøgler"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
 		var listItem = document.createElement('li'),
 		html = device.name;
 		listItem.innerHTML = html;
