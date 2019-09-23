@@ -59,10 +59,10 @@ function onDiscoverDevice(device){
 	//Make a list in html and show devises
 		if(device.name == "HTC"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
 		var listItem = document.createElement('li'),
-		html = device.name+ "," + device.id;
+		html = device.name;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
-		} //slut tuborgparentes til mulig if-sætning
+		//} //slut tuborgparentes til mulig if-sætning
 }
 
 
