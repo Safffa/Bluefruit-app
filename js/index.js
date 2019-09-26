@@ -54,6 +54,11 @@ function refreshDeviceList(){
 	}
 }
 
+function StopButton(){
+	document.getElementById("StopButton").innerHTML = '';
+	if (ble.connect == true){
+		ble.disconnect(deviceId, onDisconnect)
+	}
 
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
