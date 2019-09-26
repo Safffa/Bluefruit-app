@@ -56,8 +56,8 @@ function refreshDeviceList(){
 
 function StopButton(){
 	document.getElementById("StopButton").innerHTML = '';
-	if (ble.connect == true){
-		ble.disconnect(deviceId, onDisconnect)
+	//if (ble.connect == true){
+		//ble.disconnect(deviceId, onDisconnect)
 	}
 
 function onDiscoverDevice(device){
