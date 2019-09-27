@@ -96,6 +96,10 @@ function StopBuzz(){
 	sendData();
 }
 
+function StopLed(){
+	messageInput.value = '2';
+	sendData();
+
 function sendData() { // send data to Arduino
 	 var data = stringToBytes(messageInput.value);
 	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
