@@ -54,11 +54,6 @@ function refreshDeviceList(){
 	}
 }
 
-function StopButton(){
-	document.getElementById("StopButton").innerHTML = '';
-	//if (ble.{
-	}
-
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
 		if(device.name == "Find nøgler"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
@@ -96,9 +91,10 @@ function onConnError(){
 	document.getElementById("receiveDiv").innerHTML =  "Received: " + bytesToString(data) + "<br/>";
 }
 
-function data(txt){
-	messageInput.value = txt;
-}	
+function StopBuzz(){
+	messageInput.value = '1';
+	sendData();
+}
 
 function sendData() { // send data to Arduino
 	 var data = stringToBytes(messageInput.value);
